@@ -1,0 +1,14 @@
+strategies:
+  long_momentum:
+    order_types: ["long"]
+    entry_rules:
+      - "Close > SMA(Close,20)"
+    exit_rules:
+      - "Close <= SMA(Close,20)"
+  
+  short_mean_reversion:
+    order_types: ["short"]
+    entry_rules:
+      - "Close > SMA(Close,5)"
+    exit_rules:
+      - "SMA(Close,7) <= SMA(Close,100) and Close > SMA(Close,5)"
